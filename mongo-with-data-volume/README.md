@@ -12,7 +12,7 @@ We will introduce you to two Docker concepts: mapping volumes between containers
 Install the Mongo client on your computer by following the documentation at the mongodb website. [Installation instructions](https://docs.mongodb.org/manual/installation/).
 ```
 mkdir -p ./data/mongo
-docker run --name mongo-dev -d -v ./data/mongo:/data/db -p 27017 dmahajan/mongo-with-data-volume
+docker run --name mongo-dev -d -v `pwd`/data/mongo:/data/db -p 27017 dmahajan/mongo-with-data-volume
 ```
 The -v switch indicates your our mapping your local host /opt/mongodb directory with the /data/db directory within the container. The --name switch names the running instance.
 
@@ -56,6 +56,6 @@ git clone https://github.com/cs905s/docker/mongo-with-data-volume
 cd mongo-with-data-volume
 docker build mongo-with-data-volume
 mkdir -p ./data/mongo
-docker run --name mongo-dev -d -v ./data/mongo:/data/db -p 27017 mongo-with-data-volume
+docker run --name mongo-dev -d -v `pwd`/data/mongo:/data/db -p 27017 mongo-with-data-volume
 ```
 
